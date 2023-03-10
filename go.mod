@@ -1,3 +1,3 @@
-module github.com/qudgus9601/learngo
+module learngo
 
 go 1.20
