@@ -2,6 +2,9 @@ package study
 
 import "fmt"
 
+/*
+Dev
+*/
 func AboutSwitch(age int) {
 	switch {
 	case age <= 13:
@@ -15,6 +18,9 @@ func AboutSwitch(age int) {
 	}
 }
 
+/*
+Dev
+*/
 func DefineVariableBeforeSwitchWork(age int) {
 	switch manAge := age - 1;{
 	case manAge >= 19:
@@ -24,6 +30,9 @@ func DefineVariableBeforeSwitchWork(age int) {
 	}
 }
 
+/*
+Dev
+*/
 func OnlyEqualSwitch(age int) {
 	switch age{
 	case 14:
