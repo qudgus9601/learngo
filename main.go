@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"learngo/banking"
+	"learngo/dict"
 	"learngo/study"
 )
 
@@ -43,4 +45,45 @@ func main() {
 
 	// 구조체
 	study.Struct()
+
+	// bank account
+	account := banking.NewAccount("안병현",1000);
+	fmt.Println(account);
+	account.Deposit(100)
+	fmt.Println(account);
+	err := account.Withdraw(2000)
+	if err != nil {
+		// log.Fatalln(err) 프로그램을 종료시킨다.
+		fmt.Println(err)
+	}
+	fmt.Println(account);
+
+	// dictionary
+	dictionary := dict.Dictionary{}
+	dictionary.Add("hello","world")
+	definition, err := dictionary.Search("hello")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
+	}
+	result, err := dictionary.Update("hello","bye");
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+	res,err := dictionary.Search("hello");
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(res)
+	}
+	dictionary.Delete("hello");
+	data,err := dictionary.Search("hello");
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(data)
+	}
 }
